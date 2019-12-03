@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ipstack.Geolocation.WebApi", "ipstack.Geolocation.WebApi\ipstack.Geolocation.WebApi.csproj", "{40D3F1EA-9127-4911-A462-E2210E9419D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ipstack.Geolocation.Core", "ipstack.Geolocation.Core\ipstack.Geolocation.Core.csproj", "{D2B246B4-FEDF-48B0-A13F-BEE477531583}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ipstack.Geolocation.DataAccess", "ipstack.Geolocation.DataAccess\ipstack.Geolocation.DataAccess.csproj", "{D0F426CA-E9B2-47D5-8A57-320193DB43C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40D3F1EA-9127-4911-A462-E2210E9419D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40D3F1EA-9127-4911-A462-E2210E9419D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40D3F1EA-9127-4911-A462-E2210E9419D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40D3F1EA-9127-4911-A462-E2210E9419D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2B246B4-FEDF-48B0-A13F-BEE477531583}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2B246B4-FEDF-48B0-A13F-BEE477531583}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2B246B4-FEDF-48B0-A13F-BEE477531583}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2B246B4-FEDF-48B0-A13F-BEE477531583}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0F426CA-E9B2-47D5-8A57-320193DB43C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0F426CA-E9B2-47D5-8A57-320193DB43C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0F426CA-E9B2-47D5-8A57-320193DB43C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0F426CA-E9B2-47D5-8A57-320193DB43C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C873CDD-6C9D-42D0-A0FC-1EAE61EFF366}
+	EndGlobalSection
+EndGlobal
