@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ipstack.Geolocation.Service
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ipstack.Geolocation.WebApi", "ipstack.Geolocation.WebApi\ipstack.Geolocation.WebApi.csproj", "{40D3F1EA-9127-4911-A462-E2210E9419D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ipstack.Geolocation.Tests", "ipstack.Geolocation.Tests\ipstack.Geolocation.Tests.csproj", "{79EF1E4E-B070-4A9B-9E95-447E560CFF92}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{40D3F1EA-9127-4911-A462-E2210E9419D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40D3F1EA-9127-4911-A462-E2210E9419D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40D3F1EA-9127-4911-A462-E2210E9419D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79EF1E4E-B070-4A9B-9E95-447E560CFF92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79EF1E4E-B070-4A9B-9E95-447E560CFF92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79EF1E4E-B070-4A9B-9E95-447E560CFF92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79EF1E4E-B070-4A9B-9E95-447E560CFF92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
