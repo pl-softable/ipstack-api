@@ -1,11 +1,16 @@
 ﻿namespace ipstack.Geolocation.WebApi
 {
+    using System.Reflection;
     using System.Web.Http;
     using App_Start;
     using Autofac;
+    using Autofac.Integration.WebApi;
+    using AutoMapper;
     using ipstack.Geolocation.DataAccess;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Serialization;
+    using Services.Services;
+    using Services.Services.API;
 
     public static class WebApiConfig
     {
@@ -13,9 +18,23 @@
         {
             var builder = new ContainerBuilder();
 
+            var mapper = new MapperConfiguration(options =>
+            {
+                    options.AddProfile(new MappingsProfile());
+            }).CreateMapper();
+
+            builder.RegisterInstance(mapper);
+
+            builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
+
+            builder.RegisterWebApiFilterProvider(config);
+
+            builder.RegisterWebApiModelBinderProvider();
+
             builder.RegisterType<ApplicationDbContext>()
-                .WithParameter("connectionString", "OktaConnectionString")
                 .InstancePerLifetimeScope();
+
+            builder.RegisterType<GeolocationService>().As<IGeolocationService>();
 
             config.MapHttpAttributeRoutes();
 
@@ -33,6 +52,7 @@
             SwaggerConfig.Register(config);
 
             var container = builder.Build();
+            config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
         }
     }
 }

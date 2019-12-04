@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D0F426CA-E9B2-47D5-8A57-320193DB43C1}</ProjectGuid>
+    <ProjectGuid>{2EE1864F-B9AB-483A-98E3-3175AED5F231}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ipstack.Geolocation.DataAccess</RootNamespace>
-    <AssemblyName>ipstack.Geolocation.DataAccess</AssemblyName>
+    <RootNamespace>ipstack.Geolocation.Services</RootNamespace>
+    <AssemblyName>ipstack.Geolocation.Services</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -45,7 +48,12 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,26 +62,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Migrations\201912041853455_FirstMigration.cs" />
-    <Compile Include="Migrations\201912041853455_FirstMigration.designer.cs">
-      <DependentUpon>201912041853455_FirstMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Geolocation.cs" />
-    <Compile Include="Models\GeolocationResponse.cs" />
-    <Compile Include="Models\Language.cs" />
-    <Compile Include="Models\Location.cs" />
+    <Compile Include="HttpHelper.cs" />
+    <Compile Include="Models\DTO\GeolocationDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\API\IGeolocationService.cs" />
+    <Compile Include="Services\GeolocationService.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ipstack.Geolocation.Core\ipstack.Geolocation.Core.csproj">
+      <Project>{d2b246b4-fedf-48b0-a13f-bee477531583}</Project>
+      <Name>ipstack.Geolocation.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ipstack.Geolocation.DataAccess\ipstack.Geolocation.DataAccess.csproj">
+      <Project>{D0F426CA-E9B2-47D5-8A57-320193DB43C1}</Project>
+      <Name>ipstack.Geolocation.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="app.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201912041853455_FirstMigration.resx">
-      <DependentUpon>201912041853455_FirstMigration.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

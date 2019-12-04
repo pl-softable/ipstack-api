@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
-
-namespace ipstack.Geolocation.WebApi
+﻿namespace ipstack.Geolocation.WebApi
 {
+    using System.Web.Mvc;
+    using System.Web.Routing;
+
     public class RouteConfig
     {
         public static void RegisterRoutes(RouteCollection routes)
@@ -14,9 +10,9 @@ namespace ipstack.Geolocation.WebApi
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                "Default",
+                "{controller}/{action}/{ipAddress}",
+                new {controller = "Geolocation", action = "GetGeolocationByIpAddress", ipAddress = UrlParameter.Optional}
             );
         }
     }
