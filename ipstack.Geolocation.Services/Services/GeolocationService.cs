@@ -28,6 +28,11 @@
             var apiUrl = ConfigurationManager.AppSettings["ApiUrl"];
             var apiToken = ConfigurationManager.AppSettings["ApiToken"];
 
+            if (await this.dbContext.Geolocations.AnyAsync(item => item.Ip == ipAddress))
+            {
+                throw new Exception("IP exists in the database.");
+            }
+
             var result = await HttpHelper.GetApiResponse<GeolocationResponse>(apiToken, apiUrl, ipAddress);
 
             this.dbContext.Geolocations.Add(this.ConvertToDatabaseObject(result));
